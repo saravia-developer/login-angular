@@ -1,0 +1,16 @@
+<img src="assets/imagen-login.png" alt="login">
+
+<form [formGroup]="formGroupLogin" (ngSubmit)="login($event)">
+
+  <div class="username">
+    <label for="username">Email</label>
+    <input type="text" id="username" name="username" formControlName="username">
+  </div>
+
+  <div class="password">
+    <label for="password">Contraseña</label>
+    <input type="text" id="password" name="password" formControlName="password">
+  </div>
+
+  <button #submitLogin [disabled]="!formGroupLogin.valid">Ingresar</button>
+</form>

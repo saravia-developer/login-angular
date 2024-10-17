@@ -1,0 +1,31 @@
+<h2>Form Register</h2>
+
+<form action="" [formGroup]="formRegister" (ngSubmit)="submit($event)">
+
+  <div class="name-user">
+    <label for="name">Nombre</label>
+    <input type="text" id="name" formControlName="name" />
+  </div>
+
+  <div class="lastname-user">
+    <label for="lastname">Apellido</label>
+    <input type="text" id="lastname" formControlName="lastname"/>
+  </div>
+
+  <div class="cellphone">
+    <label for="cellphone">Número de Celular</label>
+    <input type="text" id="cellphone" formControlName="cellphone"/>
+  </div>
+
+  <div class="email">
+    <label for="email">Email</label>
+    <input type="text" id="email" formControlName="email"/>
+  </div>
+
+  <div class="password">
+    <label for="password">Contraseña</label>
+    <input type="text" id="password" formControlName="password"/>
+  </div>
+
+  <button type="submit" [disabled]="!formRegister.valid" >Crear Cuenta</button>
+</form>
