@@ -1,0 +1,30 @@
+:host {
+
+  form {
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 50px 0;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      margin: 5px 0;
+
+      label {
+        font-weight: 600;
+      }
+
+      input {
+        height: 20px;
+      }
+    }
+
+    > button {
+      margin: 10px 0;
+    }
+  }
+}

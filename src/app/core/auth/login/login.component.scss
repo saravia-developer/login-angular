@@ -1,14 +1,36 @@
 :host {
 
-  // display: grid;
-  // margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
 
   img {
     width: 200px;
     height: 200px;
+    border-radius: 50%;
   }
 
-  .username {
+  form {
 
+    > div {
+      display: flex;
+      flex-direction: column;
+      margin: 5px 0;
+
+      label {
+        font-weight: 600;
+      }
+
+      input {
+        height: 20px;
+      }
+    }
+
+    > a {
+      display: block;
+      margin: 10px 0
+    }
   }
 }
