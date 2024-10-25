@@ -1,0 +1,39 @@
+<p>Para crear una tabla en esta sección, tienes que ingresar un archivo con el formato excel, csv o json</p>
+<form (submit)="fileUpload($event)">
+    <div>
+      <label for="uploadInput">{{ !file ? "Sube un documento" : "Documento ingresado" }}</label>
+      <input
+        type="file"
+        name="file"
+        id="uploadInput"
+        (change)="onFileSelected($event)"
+        accept=".csv, application/json, .xlsx, .xls"
+        #uploadInput
+        />
+    </div>
+    <p class="warning" *ngIf="prohibitedFile">
+      Solo se permite el formato excel, csv o json
+    </p>
+    <button type="submit" #uploadDocument [disabled]="true">Enviar</button>
+</form>
+
+<div *ngIf="0 < fileInformation.length; else messageToAddData">
+  <table>
+
+      <thead>
+        <tr>
+          <th *ngFor="let information of fileTableHead">{{ information }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let information of fileTableBody">
+          <td *ngFor="let data of information">{{ data }}</td>
+        </tr>
+      </tbody>
+
+  </table>
+</div>
+
+<ng-template #messageToAddData>
+  <b>Añade un archivo y se creará una tabla</b>
+</ng-template>

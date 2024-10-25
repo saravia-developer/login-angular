@@ -16,6 +16,10 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule),
     canActivate: [authGuard]
+  },
+  {
+    path: 'table',
+    loadChildren: () => import('./modules/table/table.module').then(m => m.TableModule)
   }
 ];
 
