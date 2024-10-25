@@ -8,6 +8,7 @@ import { AuthModule } from './core/auth/auth.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { ToastrModule } from 'ngx-toastr';
 import { HomeModule } from './modules/home/home.module';
+import { TableModule } from './modules/table/table.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HomeModule } from './modules/home/home.module';
     AuthModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    HomeModule
+    HomeModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
