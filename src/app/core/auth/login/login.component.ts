@@ -37,6 +37,8 @@ export class LoginComponent {
     this.btnSubmitLogin.nativeElement.disabled = true;
     const values = this.formGroupLogin.value;
 
+    console.log(values);
+
     this.authServices.login(values).subscribe({
       next: (res) => {
         const {
@@ -55,6 +57,8 @@ export class LoginComponent {
           nameError,
           timestamp
         } = error;
+
+        this.formGroupLogin.reset();
 
         this.toastr.show(message, nameError, timestamp, 'error')
       },

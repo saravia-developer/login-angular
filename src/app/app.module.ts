@@ -10,6 +10,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { HomeModule } from './modules/home/home.module';
 import { TableModule } from './modules/table/table.module';
 import { CommonsModule } from './commons/commons.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CommonsModule } from './commons/commons.module';
     ToastrModule.forRoot(),
     HomeModule,
     TableModule,
-    CommonsModule
+    CommonsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

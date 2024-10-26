@@ -2,15 +2,24 @@
 
 <form [formGroup]="formGroupLogin" (ngSubmit)="login($event)">
 
-  <div class="username">
-    <label for="username">Email</label>
-    <input type="text" id="username" name="username" formControlName="username">
-  </div>
+  <atoms-field-input
+    label="Email"
+    type="text"
+    identification="username"
+    name="username"
+    placeholder=""
+    formControlName="username"
+    ></atoms-field-input>
 
-  <div class="password">
-    <label for="password">Contraseña</label>
-    <input type="text" id="password" name="password" formControlName="password">
-  </div>
+  <atoms-field-input
+    label="Contraseña"
+    type="text"
+    identification="password"
+    name="password"
+    placeholder=""
+    formControlName="password"
+    ></atoms-field-input>
+
 
   <button #submitLogin [disabled]="!formGroupLogin.valid">Ingresar</button>
 

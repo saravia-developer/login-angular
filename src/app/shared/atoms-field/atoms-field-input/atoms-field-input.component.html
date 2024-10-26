@@ -1,0 +1,9 @@
+<label [for]="identification">{{ label }}</label>
+<input
+  [type]="type"
+  [placeholder]="placeholder"
+  [name]="name"
+  [id]="identification"
+  [value]="value"
+  (input)="onInputChange($event)"
+  />
