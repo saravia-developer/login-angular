@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { ToastrModule } from 'ngx-toastr';
 import { HomeModule } from './modules/home/home.module';
 import { TableModule } from './modules/table/table.module';
+import { CommonsModule } from './commons/commons.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TableModule } from './modules/table/table.module';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     HomeModule,
-    TableModule
+    TableModule,
+    CommonsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

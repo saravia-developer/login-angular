@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
 
   @ViewChild('submitLogin')
-  btnSubmitLogin!: HTMLButtonElement;
+  btnSubmitLogin!: ElementRef<HTMLButtonElement>;
 
   formGroupLogin: FormGroup;
 
@@ -34,7 +34,7 @@ export class LoginComponent {
 
   login(event: Event) {
     event.preventDefault();
-    this.btnSubmitLogin.disabled = true;
+    this.btnSubmitLogin.nativeElement.disabled = true;
     const values = this.formGroupLogin.value;
 
     this.authServices.login(values).subscribe({
@@ -45,7 +45,7 @@ export class LoginComponent {
         } = res;
 
         localStorage.setItem('token', token);
-        this.btnSubmitLogin.disabled = false;
+        this.btnSubmitLogin.nativeElement.disabled = false;
         this.router.navigate([ 'home' ])
         this.toastr.show(message, 'Login success', '', 'success')
       },

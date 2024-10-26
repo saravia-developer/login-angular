@@ -1,8 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { authGuard } from './core/guards/auth.guard';
+import { PageNotFoundComponent } from './commons/components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/r/login',
+    pathMatch: 'full',
+  },
   {
     path: 'r',
     loadChildren: () => import('./core/auth/auth.module').then(m => m.AuthModule)
@@ -19,8 +25,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/r/login',
-    pathMatch: 'full',
+    component: PageNotFoundComponent
   }
 ];
 
